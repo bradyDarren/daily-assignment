@@ -1,4 +1,4 @@
-{
+employees_data = {
     "3955185": {"firstname": "Darren", "lastname": "Brady", "classification": 1},
     "3955186": {"firstname": "Evelyn", "lastname": "Smith", "classification": 2},
     "3955187": {"firstname": "Liam", "lastname": "Johnson", "classification": 1},
