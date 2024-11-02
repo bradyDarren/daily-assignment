@@ -11,4 +11,3 @@ class assignment_selection:
             return self.employement_list[emp_number]["firstname"],self.employement_list[emp_number]["lastname"]
         else: 
             return f"{emp_number} is not within the database."
-
