@@ -8,11 +8,13 @@ class DP1Machines:
         "orange": 4
     }
 
-    def get_assignements_1(self):
+    def get_machine_1(self):
         # prints a current report of all of the possible DP1 assignments
         baler = []
+        count = 0
         for machine_name in self.machines:
-            baler.append(machine_name)
+            count += 1
+            baler.append(f"{count}. {machine_name} remaining : {self.machines[machine_name]}")
         return baler
     
 
@@ -23,9 +25,13 @@ class DP2Machines:
         "forklift" : 2
     }
 
-    def get_assignments_2(self):
+    def get_machine_2(self):
         assignments = []
+        count = 0
         for task in self.riding_machines:
-            assignments.append(task)
+            count += 1
+            assignments.append(f"{count}. {task} remaining : {self.riding_machines[task]}")
         return assignments
-    
+
+x = DP1Machines()
+print(x.get_machine_1())
