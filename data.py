@@ -20,3 +20,5 @@ employees_data = {
     3955203: {"firstname": "Samuel", "lastname": "Clark", "classification": 1},
     3955204: {"firstname": "Isabella", "lastname": "Rodriguez", "classification": 2}
 }
+ 
+# print(employees_data[3955185]["classification"])
