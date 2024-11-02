@@ -1,8 +1,11 @@
 from data import employees_data
 from employees import Employees, DP1, DP2
 from machine import DP1Machines, DP2Machines
+from assignment_selection import assignment_selection
 
-DP1_assignments = DP1Machines.machines
+assignment = assignment_selection(employees_data)
+
+print(assignment.retreive_name(emp_number="3955185"))
 
 # people_f_name = []
 
