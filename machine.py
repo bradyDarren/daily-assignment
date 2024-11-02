@@ -10,18 +10,21 @@ class DP1Machines:
 
     def get_assignements_1(self):
         # prints a current report of all of the possible DP1 assignments
-        options = ""
+        one_options = ""
         for baler in self.machines:
-            options += f"{baler}/"
-        return options
+            one_optionsoptions += f"{baler}/"
+        return one_options
         
 
 class DP2Machines:
+
     riding_machines = {
         "claw" : 1,
         "forklift" : 2
     }
 
-x = DP1Machines()
-
-print(x.get_assignements_1()[:-1])
+    def get_assignment_2(self):
+        two_options = ""
+        for assignment in self.riding_machines:
+            two_options += f"{assignment}/"
+        return two_options
