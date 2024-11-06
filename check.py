@@ -1,6 +1,7 @@
 
 class checks: 
 
+    # checks to make sure response from user input is only numerical.
     def check_int(self, prompt):
         while True: 
             try:
