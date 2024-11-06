@@ -48,3 +48,4 @@ class DP2Machines:
 # print(x.get_machine_1())
 # print(DP1Machines().get_demand_1())
 # print(DP2Machines().get_demand_2())
+# print(DP2Machines().get_machine_2())
