@@ -1,3 +1,4 @@
+# database used for the assignment selection. 
 employees_data = {
     3955185: {"firstname": "Darren", "lastname": "Brady", "classification": 1},
     3955186: {"firstname": "Evelyn", "lastname": "Smith", "classification": 2},
