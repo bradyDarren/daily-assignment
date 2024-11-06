@@ -2,19 +2,19 @@
 class DP1Machines:
 
     machines = {
-        "red": 2,
-        "green": 2,
-        "blue": 1,
-        "orange": 4
+        "RED": 2,
+        "GREEN": 2,
+        "BLUE": 1,
+        "ORANGE": 4
     }
 
     def get_machine_1(self):
         # prints a current report of all of the possible DP1 assignments
-        baler = []
+        baler = ''
         count = 0
         for machine_name in self.machines:
             count += 1
-            baler.append(f"{count}. {machine_name} remaining : {self.machines[machine_name]}")
+            baler += (f"{count}. {machine_name} tasks remaining : {self.machines[machine_name]}\n")
         return baler
     
     def get_demand_1(self):
@@ -26,16 +26,16 @@ class DP1Machines:
 class DP2Machines:
 
     riding_machines = {
-        "claw" : 1,
-        "forklift" : 2
+        "CLAW" : 1,
+        "FORKLIFT" : 2
     }
 
     def get_machine_2(self):
-        assignments = []
+        assignments = ''
         count = 0
         for task in self.riding_machines:
             count += 1
-            assignments.append(f"{count}. {task} remaining : {self.riding_machines[task]}")
+            assignments += (f"{count}. {task} tasks remaining : {self.riding_machines[task]}\n")
         return assignments
     
     def get_demand_2(self):
