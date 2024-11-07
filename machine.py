@@ -14,7 +14,7 @@ class DP1Machines:
         count = 0
         for machine_name in self.machines:
             count += 1
-            baler += (f"{count}. {machine_name} tasks remaining : {self.machines[machine_name]}\n")
+            baler += (f"    {count}. {machine_name} tasks remaining : {self.machines[machine_name]}\n")
         return baler
     
     def get_demand_1(self):
@@ -41,7 +41,7 @@ class DP2Machines:
         count = 0
         for task in self.riding_machines:
             count += 1
-            assignments += (f"{count}. {task} tasks remaining : {self.riding_machines[task]}\n")
+            assignments += (f"    {count}. {task} tasks remaining : {self.riding_machines[task]}\n")
         return assignments
     
     def get_demand_2(self):
