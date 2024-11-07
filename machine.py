@@ -23,10 +23,11 @@ class DP1Machines:
             total_demand_1 += self.machines[value]
         return total_demand_1
 
-    def adjust_tasks(self, machine):
+    def adjust_demand_1(self, machine):
         if machine in self.machines:
-            self.machines[machine] = 
-            
+            demand = self.machines[machine]
+            if demand > 0:
+                self.machines[machine] = demand - 1
 
 class DP2Machines:
 
@@ -49,8 +50,19 @@ class DP2Machines:
             total_demand_2 += self.riding_machines[value]
         return total_demand_2 
 
+    def adjust_demand_2(self, machine):
+        if machine in self.riding_machines:
+            demand = self.riding_machines[machine]
+            if demand > 0: 
+                self.riding_machines[machine] = demand - 1
+
+
+# test lines
+
 # x = DP1Machines()
 # print(x.get_machine_1())
 # print(DP1Machines().get_demand_1())
 # print(DP2Machines().get_demand_2())
 # print(DP2Machines().get_machine_2())
+# x.adjust_demand_1("RED")
+# print(x.machines)
