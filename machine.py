@@ -1,7 +1,7 @@
 
 class DP1Machines:
 
-    message = "Below is the assignments needed to be filled for the days tasks: \n"
+    message_1 = "Below is the DP1 assignments needed to be filled for the days tasks: \n"
 
     machines = {
         "RED": 2,
@@ -32,6 +32,8 @@ class DP1Machines:
                 self.machines[machine] = demand - 1
 
 class DP2Machines:
+
+    message_2 = "Below is the DP2 assignments needed to be filled for the days tasks: \n" 
 
     riding_machines = {
         "CLAW" : 1,
