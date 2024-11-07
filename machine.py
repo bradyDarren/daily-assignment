@@ -23,6 +23,11 @@ class DP1Machines:
             total_demand_1 += self.machines[value]
         return total_demand_1
 
+    def adjust_tasks(self, machine):
+        if machine in self.machines:
+            self.machines[machine] = 
+            
+
 class DP2Machines:
 
     riding_machines = {
