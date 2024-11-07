@@ -1,6 +1,8 @@
 
 class DP1Machines:
 
+    message = "Below is the assignments needed to be filled for the days tasks: \n"
+
     machines = {
         "RED": 2,
         "GREEN": 2,
