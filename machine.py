@@ -31,9 +31,9 @@ class DP1Machines:
             if demand > 0:
                 self.machines[machine] = demand - 1
     
-    def zero_demand(self, machine_chosen):
-        if self.machines[machine_chosen] == 0:
-            del self.machines[machine_chosen]
+    def zero_demand(self, machine_chosen_1):
+        if self.machines[machine_chosen_1] == 0:
+            del self.machines[machine_chosen_1]
 
 class DP2Machines:
 
@@ -63,6 +63,10 @@ class DP2Machines:
             demand = self.riding_machines[machine]
             if demand > 0: 
                 self.riding_machines[machine] = demand - 1
+    
+    def zero_demand(self, machine_chosen_2):
+        if self.riding_machines[machine_chosen_2] == 0:
+            del self.riding_machines[machine_chosen_2]
 
 
 # test lines
