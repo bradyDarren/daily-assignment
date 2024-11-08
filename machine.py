@@ -20,6 +20,7 @@ class DP1Machines:
         return baler
     
     def get_demand_1(self):
+        # returns the total amount of people needed wihtin the DP1 category.
         total_demand_1 = 0
         for value in self.machines:
             total_demand_1 += self.machines[value]
@@ -45,6 +46,7 @@ class DP2Machines:
     }
 
     def get_machine_2(self):
+        # prints a current report of all of the possible DP2 assignments
         assignments = ''
         count = 0
         for task in self.riding_machines:
@@ -53,18 +55,21 @@ class DP2Machines:
         return assignments
     
     def get_demand_2(self):
+        # returns the total amount of people needed wihtin the DP2 category.
         total_demand_2 = 0
         for value in self.riding_machines:
             total_demand_2 += self.riding_machines[value]
         return total_demand_2 
 
     def adjust_demand_2(self, machine):
+        # reduces demand by 1 if task is assigned to an employee and above 0.
         if machine in self.riding_machines:
             demand = self.riding_machines[machine]
             if demand > 0: 
                 self.riding_machines[machine] = demand - 1
     
     def zero_demand(self, machine_chosen_2):
+        # removes the assignment from the list if the demand for the assignment is 0.
         if self.riding_machines[machine_chosen_2] == 0:
             del self.riding_machines[machine_chosen_2]
 
