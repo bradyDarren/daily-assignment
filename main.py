@@ -19,11 +19,9 @@ while True:
     print(dp2_machines. get_machine_2())
 
     # accepting user input
-    user_emp_num = input("Please enter your PeopleSoft Number: ").lower()
+    user_emp_num = checks().check_int("Please enter your PeopleSoft Number: ")
 
-    if user_emp_num == "adj": 
-        
-    elif partner.check_user_input(user_emp_num):
+    if partner.check_user_input(user_emp_num):
         emp_level = partner.employee_level(user_emp_num)
         if emp_level:
             # generate a random selection when the user inputs there employee number. 
@@ -31,15 +29,19 @@ while True:
             partner_name = partner.retreive_name(user_emp_num)
             removed_partner = partner.remove_assigned(user_emp_num)
             dp1_machines.adjust_demand_1(rand_machine_1)
+            print("\n" * 5)
             print(f"{partner_name} - {rand_machine_1}\n")
             dp1_machines.zero_demand(rand_machine_1)
+            print("\n" * 5)
         else:
             rand_machine_2 = assignment_selection().assign_task(dp2_machines.riding_machines)
             partner_name = partner.retreive_name(user_emp_num)
             removed_partner = partner.remove_assigned(user_emp_num)
             dp2_machines.adjust_demand_2(rand_machine_2)
+            print("\n" * 5)
             print(f"{partner_name} - {rand_machine_2}\n")
             dp2_machines.zero_demand(rand_machine_2)
+            print("\n" * 5)
     else: 
         print("PeopleSoft # not found. Please input a valid PeopleSoft #.")
     
