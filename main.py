@@ -9,7 +9,7 @@ dp1_machines = DP1Machines()
 dp2_machines = DP2Machines()
 partner = Employees(employees_data)
 
-while True:
+while dp1_machines.machines or dp2_machines.riding_machines:
     
     # printing out a report of the remaining assignments needing to be filled for both
     # DP1 and DP2. 
@@ -28,9 +28,8 @@ while True:
         removed_partner = partner.remove_assigned(user_emp_num)
         dp1_machines.adjust_demand_1(rand_machine)
         print(f"{partner_name} - {rand_machine}")
-        print(dp1_machines.machines)
-        print(employees_data)
+        dp1_machines.zero_demand(rand_machine)
     else: 
         print("PeopleSoft # not found. Please input a valid PeopleSoft #.")
-    break
+    
 
