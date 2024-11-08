@@ -8,13 +8,19 @@ class Employees:
 
     def retreive_name(self, emp_number):
         if emp_number in self.employee_list:
-            print (f"{self.employee_list[emp_number]["firstname"]} {self.employee_list[emp_number]["lastname"]}")
+            return f"{self.employee_list[emp_number]["firstname"]} {self.employee_list[emp_number]["lastname"]}"
         else: 
-            print (f"{emp_number} is not within the database.")
+            return (f"{emp_number} is not within the database.")
     
-    def remove_assigned(self, emp_list, emp_number):
-        if emp_number in emp_list:
-            del emp_list[emp_number]
+    def remove_assigned(self, emp_number):
+        if emp_number in self.employee_list:
+            del self.employee_list[emp_number]
+        
+    def check_user_input(self, user_emp_num):
+        if user_emp_num in list(self.employee_list.keys()):
+            return True
+        else:
+            return False
 
     # def employee_level(self, emp_number, emp_list):
 
