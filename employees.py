@@ -22,8 +22,11 @@ class Employees:
         else:
             return False
 
-    # def employee_level(self, emp_number, emp_list):
-
+    def employee_level(self, partner):
+        if self.employee_list[partner]["classification"] == 1:
+            return True
+        elif self.employee_list[partner]["classification"] == 2:
+            return False
 
 # class DP1(Employees):
 
