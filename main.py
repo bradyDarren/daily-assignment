@@ -9,7 +9,7 @@ dp1_machines = DP1Machines()
 dp2_machines = DP2Machines()
 partner = Employees(employees_data)
 
-while dp1_machines.machines or dp2_machines.riding_machines:
+while True:
     
     # printing out a report of the remaining assignments needing to be filled for both
     # DP1 and DP2. 
@@ -22,13 +22,26 @@ while dp1_machines.machines or dp2_machines.riding_machines:
     user_emp_num = checks().check_int("Please enter your PeopleSoft Number: ")
 
     if partner.check_user_input(user_emp_num):
-        # generate a random selection when the user inputs there employee number. 
-        rand_machine = assignment_selection().assign_task(dp1_machines.machines)
-        partner_name = partner.retreive_name(user_emp_num)
-        removed_partner = partner.remove_assigned(user_emp_num)
-        dp1_machines.adjust_demand_1(rand_machine)
-        print(f"{partner_name} - {rand_machine}")
-        dp1_machines.zero_demand(rand_machine)
+        emp_level = partner.employee_level(user_emp_num)
+        if emp_level:
+            # generate a random selection when the user inputs there employee number. 
+            rand_machine_1 = assignment_selection().assign_task(dp1_machines.machines)
+            partner_name = partner.retreive_name(user_emp_num)
+            removed_partner = partner.remove_assigned(user_emp_num)
+            dp1_machines.adjust_demand_1(rand_machine_1)
+            print("\n" * 5)
+            print(f"{partner_name} - {rand_machine_1}\n")
+            dp1_machines.zero_demand(rand_machine_1)
+            print("\n" * 5)
+        else:
+            rand_machine_2 = assignment_selection().assign_task(dp2_machines.riding_machines)
+            partner_name = partner.retreive_name(user_emp_num)
+            removed_partner = partner.remove_assigned(user_emp_num)
+            dp2_machines.adjust_demand_2(rand_machine_2)
+            print("\n" * 5)
+            print(f"{partner_name} - {rand_machine_2}\n")
+            dp2_machines.zero_demand(rand_machine_2)
+            print("\n" * 5)
     else: 
         print("PeopleSoft # not found. Please input a valid PeopleSoft #.")
     
